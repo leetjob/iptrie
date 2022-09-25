@@ -23,9 +23,9 @@ func main() {
 		"2001:db8::68",
 	}
 
-	ipTrie := NewTrie()
+	ipTrie := iptrie.NewTrie()
 	for _, ip := range ipList {
-		ipTrie.InsertIpAddr(NewIpAddr(ip), nil)
+		ipTrie.InsertIpAddr(iptrie.NewIpAddr(ip), nil)
 	}
 	result := ipTrie.FindByIp(net.ParseIP("172.16.100.100"))
 	fmt.Printf("result=%v", result)
